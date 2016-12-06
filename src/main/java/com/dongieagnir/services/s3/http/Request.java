@@ -1,6 +1,7 @@
-package com.dongieagnir.http;
+package com.dongieagnir.services.s3.http;
 
 import java.net.URI;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Request {
@@ -14,7 +15,7 @@ public class Request {
     private String bucket;
     private String key;
     private URI endpoint;
-    private Map<String,String> subResources;
+    private Map<String,String> subResources = new HashMap<>();
 
     public Method getMethod() {
         return method;
