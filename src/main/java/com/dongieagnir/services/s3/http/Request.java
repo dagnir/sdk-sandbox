@@ -16,6 +16,7 @@ public class Request {
     private String key;
     private URI endpoint;
     private Map<String,String> subResources = new HashMap<>();
+    private Map<String,String> headers = new HashMap<>();
 
     public Method getMethod() {
         return method;
@@ -55,5 +56,17 @@ public class Request {
 
     public void addSubResource(String name, String value) {
         subResources.put(name, value);
+    }
+
+    public Map<String, String> getHeaders() {
+        return headers;
+    }
+
+    public void addHeader(String name, String value) {
+        headers.put(name.toLowerCase(), value);
+    }
+
+    public String getHeader(String name) {
+        return headers.get(name);
     }
 }
